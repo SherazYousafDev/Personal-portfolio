@@ -6,6 +6,7 @@
 
     --color-bg: #141414;
     --color-card:#1a1a1a;
+    --color-second: #27272A;
 
 
     --font-inter: 'Inter';
@@ -13,4 +14,5 @@
 
 body {
     font-family: 'Inter';
+    overflow-x: hidden;
 }
