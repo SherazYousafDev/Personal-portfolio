@@ -10,7 +10,7 @@ const Footer = () => {
 
       {/* 3. The Massive Background Text (Bottom Layer) */}
       <div className="relative mt-4 select-none">
-        <h2 className="text-[18vw] font-bold leading-none tracking-[-0.05em] text-card flex items-center justify-center whitespace-nowrap">
+        <h2 className="text-[18vw] font-bold leading-none tracking-[-0.05em] text-second flex items-center justify-center whitespace-nowrap">
           THANK
          
           YOU

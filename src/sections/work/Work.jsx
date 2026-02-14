@@ -7,7 +7,7 @@ const projects = [
     title: "Geo Leaders",
     category: "Web Development / UI-UX",
     year: "2025",
-    img: "/pro-projects/geo-leaders.png",
+    img: "/pro-projects/geo-leaders.webp",
     color: "#1a1a1a",
     link: "https://geo-leaders.com"
   },
@@ -16,18 +16,18 @@ const projects = [
     title: "ArkGenisys",
     category: "Website / UI-UX",
     year: "2025",
-    img: "/pro-projects/ark.png",
+    img: "/pro-projects/ark.webp",
     color: "#161616",
     link: "https://arkgenisys.com"
   },
   {
     id: "03",
     title: "Pasty",
-    category: "Interface Design / Desktop",
+    category: "Website / Auth / Supabase",
     year: "2024",
-    img: "/project3.jpg",
+    img: "/pro-projects/pasty.webp",
     color: "#121212",
-    link: "https://pasty.app"
+    link: "https://pasty-notes.netlify.app"
   }
 ];
 
@@ -35,67 +35,69 @@ const WorkSection = () => {
   return (
     <section id='work' className="bg-bg text-white py-24 px-4 md:px-12 border-t border-white/5">
       
-      
-{/* Section Header */}
-<div 
-  className="relative z-10 flex flex-col md:flex-row md:items-end justify-between gap-8 border-b border-white/5 pb-12 mb-24"
-  data-aos="fade-up"
-  data-aos-duration="1000"
->
-  {/* Left Side: Main Heading */}
-  <div className="max-w-2xl">
-    <div className="flex items-center gap-3 mb-6" data-aos="fade-right" data-aos-delay="200">
-      <div className="relative flex h-2 w-2">
-        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FF0055] opacity-75"></span>
-        <span className="relative inline-flex rounded-full h-2 w-2 bg-[#FF0055]"></span>
-      </div>
-      <span className="text-[10px] uppercase tracking-[0.5em] text-gray-500 font-black">02 / Selected Work</span>
-    </div>
-    <h2 className="text-6xl md:text-9xl font-bold leading-[0.8]" data-aos="zoom-out-up" data-aos-delay="400">
-      PRO<span className="text-transparent" style={{ WebkitTextStroke: '1px rgba(255,255,255,0.8)' }}>JECTS</span>
-    </h2>
-  </div>
+      {/* Section Header */}
+      <div 
+        className="relative z-10 flex flex-col md:flex-row md:items-end justify-between gap-8 border-b border-white/5 pb-12 mb-24"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
+        {/* Left Side: Main Heading */}
+        <div className="max-w-2xl relative">
+          {/* Background Word */}
+          <span className="absolute inset-0 flex items-center justify-center text-[clamp(100px,20vw,300px)] font-black text-white/5 leading-none select-none pointer-events-none">
+            MY
+          </span>
 
-  {/* Right Side: Deployment Tagline */}
-  <div 
-    className="md:max-w-[280px] text-right"
-    data-aos="fade-left"
-    data-aos-delay="600"
-  >
-    <div className="flex flex-col items-end gap-2">
-      <p className="text-[10px] uppercase tracking-[0.3em] font-black text-[#FF0055]">
-        Production Ready
-      </p>
-      <p className="text-sm text-gray-400 font-medium leading-relaxed tracking-tight">
-        A curated selection of <span className="text-white">real-world applications</span>, 
-        fully deployed and optimized for performance, scalability, and seamless user interaction.
-      </p>
-    </div>
-  </div>
-</div>
+          <div className="flex items-center gap-3 mb-6 relative z-10" data-aos="fade-right" data-aos-delay="200">
+            <div className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FF0055] opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#FF0055]"></span>
+            </div>
+            <span className="text-[10px] uppercase tracking-[0.5em] text-gray-500 font-black">02 / Selected Work</span>
+          </div>
+
+          <h2 className="relative text-6xl md:text-9xl font-bold leading-[0.8] z-10" data-aos="zoom-out-up" data-aos-delay="400">
+            WORK
+          </h2>
+          <p className="relative text-gray-500 text-xl max-w-2xl leading-relaxed z-10">
+            A showcase of <span className="text-white font-bold">real-world deployed projects</span> built with attention to detail and modern UI/UX.
+          </p>
+        </div>
+
+        {/* Right Side: Deployment Tagline */}
+        <div 
+          className="md:max-w-[280px] text-right"
+          data-aos="fade-left"
+          data-aos-delay="600"
+        >
+          <div className="flex flex-col items-end gap-2">
+            <p className="text-[10px] uppercase tracking-[0.3em] font-black text-[#FF0055]">
+              Production Ready
+            </p>
+            <p className="text-sm text-gray-400 font-medium leading-relaxed tracking-tight">
+              Fully deployed and optimized applications, built for performance, scalability, and seamless user interaction.
+            </p>
+          </div>
+        </div>
+      </div>
 
       {/* Project Stack Container */}
-      <div className="flex flex-col gap-[15vh]"> 
+      <div className="flex flex-col gap-[10vh] md:gap-[15vh]">
         {projects.map((project, index) => (
           <div 
             key={project.id} 
-            className="sticky top-20 w-full"
-            style={{ 
-              paddingTop: `${index * 40}px`, 
-              zIndex: index + 1 
-            }}
-            // The card itself slides up and fades in
+            className="w-full"
             data-aos="fade-up"
             data-aos-duration="1200"
             data-aos-offset="300"
           >
             <div 
-              className="group relative bg-[#111] border border-white/10 rounded-[2.5rem] overflow-hidden min-h-[80vh] flex flex-col p-6 md:p-10 transition-all duration-500 shadow-2xl"
+              className="group relative bg-[#111] border border-white/10 rounded-[2.5rem] overflow-hidden min-h-[40vh] md:min-h-[80vh] flex flex-col p-6 md:p-10 transition-all duration-500 shadow-2xl hover:scale-[1.02] hover:shadow-[0_30px_50px_rgba(255,0,85,0.3)]"
               style={{ backgroundColor: project.color }}
             >
               
-              {/* 1. Top Bar: Title & Year */}
-              <div className="relative z-20 flex justify-between items-start mb-8">
+              {/* Top Bar: Title & Year */}
+              <div className="relative z-20 flex flex-col md:flex-row justify-between items-start mb-8">
                 <div data-aos="fade-right" data-aos-delay="200" data-aos-anchor-placement="top-bottom">
                   <div className="flex items-center gap-3 mb-2">
                     <span className="text-[#FF0055] font-black text-xs">{project.id}</span>
@@ -108,7 +110,7 @@ const WorkSection = () => {
                   </a>
                 </div>
                 
-                <div className="hidden md:block text-right" data-aos="fade-left" data-aos-delay="400" data-aos-anchor-placement="top-bottom">
+                <div className="hidden md:flex flex-col items-end text-right" data-aos="fade-left" data-aos-delay="400" data-aos-anchor-placement="top-bottom">
                   <span className="text-4xl font-light opacity-20 block">{project.year}</span>
                   <a 
                     href={project.link} 
@@ -124,12 +126,12 @@ const WorkSection = () => {
                 </div>
               </div>
 
-              {/* 2. BIG IMAGE CONTAINER */}
+              {/* BIG IMAGE CONTAINER */}
               <a 
                 href={project.link} 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="relative flex-1 w-full overflow-hidden rounded-2xl md:rounded-3xl border border-white/5 cursor-pointer block"
+                className="relative flex-1 w-full overflow-hidden rounded-2xl md:rounded-3xl border border-white/5 cursor-pointer block group"
                 data-aos="zoom-in-up"
                 data-aos-delay="600"
                 data-aos-duration="1500"

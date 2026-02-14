@@ -377,7 +377,7 @@ const AboutSection = () => {
                     is a missed opportunity for connection.
                   </p>
                   <p>
-                    Over the last 4 years, I’ve refined a workflow that treats{" "}
+                    Over the last 1 year, I’ve refined a workflow that treats{" "}
                     <span className="text-white">code as a design tool</span>. I
                     architect experiences where every transition serves a single
                     purpose: making the complex feel effortless.

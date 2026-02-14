@@ -21,7 +21,8 @@ const ContactSection = () => {
   ];
 
   return (
-    <section id='contact' className="bg-[#0a0a0a] text-white py-24 px-6 md:px-12 border-t border-white/5">
+    // OPTIMIZATION: overflow-x-hidden is crucial to prevent the stroke text from causing a horizontal scroll on small devices.
+    <section id='contact' className="bg-bg/95 text-white py-24 px-6 md:px-12 border-t border-white/5 overflow-x-hidden">
       
       {/* 1. Heading */}
       <div 
@@ -33,7 +34,8 @@ const ContactSection = () => {
           <div className="h-[1px] w-12 bg-[#FF0055]"></div>
           <span className="text-[10px] uppercase tracking-[0.5em] text-[#FF0055] font-black">04 / Connect</span>
         </div>
-        <h2 className="text-[12vw] md:text-[10vw] font-bold tracking-tighter leading-[0.8] uppercase">
+        {/* OPTIMIZATION: Fluid font-size for mobile to prevent text overflow */}
+        <h2 className="text-[14vw] md:text-[10vw] font-bold tracking-tighter leading-[0.8] uppercase break-words">
           LET'S <span className="text-transparent" style={{ WebkitTextStroke: '1px rgba(255,255,255,0.6)' }}>TALK</span>
         </h2>
       </div>
@@ -42,7 +44,7 @@ const ContactSection = () => {
         
         {/* 2. Email Card */}
         <div 
-          className="md:col-span-8 bg-[#141414] border border-white/5 rounded-3xl p-8 md:p-12 flex flex-col justify-between min-h-[350px]"
+          className="md:col-span-8 bg-[#141414] border border-white/5 rounded-3xl p-8 md:p-12 flex flex-col justify-between min-h-[300px] md:min-h-[350px]"
           data-aos="fade-right"
           data-aos-duration="1000"
           data-aos-delay="100"
@@ -57,10 +59,11 @@ const ContactSection = () => {
           <div className="flex flex-col md:flex-row items-start md:items-center gap-6 border-t border-white/5 pt-8">
             <button 
               onClick={handleCopy}
-              className="group flex items-center gap-4 bg-black border border-white/10 px-8 py-4 rounded-full hover:border-[#FF0055] transition-all cursor-pointer"
+              className="group flex items-center gap-4 bg-black border border-white/10 px-6 py-4 md:px-8 md:py-4 rounded-full hover:border-[#FF0055] transition-all cursor-pointer w-full md:w-auto overflow-hidden"
             >
-              <span className="text-sm md:text-xl font-medium tracking-tight">{myEmail}</span>
-              <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-[#FF0055] transition-colors">
+              {/* OPTIMIZATION: Truncate email on very small screens to prevent button blowout */}
+              <span className="text-sm md:text-xl font-medium tracking-tight truncate">{myEmail}</span>
+              <div className="shrink-0 w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-[#FF0055] transition-colors">
                 {copied ? <span className="text-[8px] font-bold uppercase">Done</span> : <Copy size={14} />}
               </div>
             </button>
@@ -83,9 +86,6 @@ const ContactSection = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-between text-lg font-bold uppercase tracking-tighter border-b border-white/5 pb-2 hover:text-[#FF0055] transition-all group"
-                data-aos="fade-up"
-                data-aos-delay={400 + (index * 100)}
-                data-aos-anchor-placement="bottom-bottom"
               >
                 {social.label} 
                 <ArrowUpRight size={20} className="text-gray-600 group-hover:text-[#FF0055] transition-all" />
@@ -96,7 +96,7 @@ const ContactSection = () => {
 
         {/* 4. Location Card */}
         <div 
-          className="md:col-span-4 bg-[#141414] border border-white/5 rounded-3xl p-8 flex flex-col justify-between"
+          className="md:col-span-4 bg-[#141414] border border-white/5 rounded-3xl p-8 flex flex-col justify-between min-h-[160px]"
           data-aos="zoom-in-right"
           data-aos-duration="1000"
           data-aos-delay="200"
@@ -118,11 +118,11 @@ const ContactSection = () => {
           data-aos-duration="1000"
           data-aos-delay="400"
         >
-          <div className="text-left">
+          <div className="text-center md:text-left">
             <h3 className="text-3xl font-bold tracking-tighter uppercase leading-none mb-2 text-white">Start a conversation</h3>
             <p className="text-sm opacity-80 font-bold uppercase tracking-widest text-white">Typically responds within 24 hours</p>
           </div>
-          <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center text-[#FF0055] group-hover:scale-110 transition-transform">
+          <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center text-[#FF0055] group-hover:scale-110 transition-transform shrink-0">
             <MessageSquare size={24} fill="currentColor" />
           </div>
         </a>
@@ -134,14 +134,13 @@ const ContactSection = () => {
         className="mt-24 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8"
         data-aos="fade-in"
         data-aos-duration="1500"
-        data-aos-anchor-placement="bottom-bottom"
       >
-        <p className="text-[10px] uppercase tracking-[0.4em] text-gray-600 font-black">
+        <p className="text-[10px] text-center md:text-left uppercase tracking-[0.4em] text-gray-600 font-black">
           © 2026 Sheraz Yousaf - All rights reserved.
         </p>
         <button 
           onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})} 
-          className="text-[10px] uppercase tracking-[0.4em] text-gray-400 font-black hover:text-white transition-colors cursor-pointer"
+          className="text-[10px] uppercase tracking-[0.4em] text-gray-400 font-black hover:text-white transition-colors cursor-pointer outline-none"
         >
           Back to Top ↑
         </button>
