@@ -52,7 +52,7 @@ const Hero = () => {
     >
       {/* HEADER */}
       <header
-        className={`fixed top-0 left-0 w-full z-[100] flex justify-between items-center px-6 py-4 md:px-10 md:py-8 transition-all duration-300 ${
+        className={`fixed top-0 left-0 w-full z-100 flex justify-between items-center px-6 py-4 md:px-10 md:py-8 transition-all duration-300 ${
           isScrolled
             ? "bg-bg/80 backdrop-blur-md py-3 border-b border-white/5"
             : "bg-transparent"
@@ -138,7 +138,7 @@ const Hero = () => {
           data-aos-delay="0"
         >
           <img
-            src="/myself.webp"
+            src="/myself-2.webp"
             alt="Portrait"
             className="h-[50vh] md:h-[80vh] w-auto object-contain grayscale opacity-20 md:opacity-30 mix-blend-screen"
           />
@@ -155,12 +155,12 @@ const Hero = () => {
           </h1>
 
           <div
-            className="w-full md:w-[70vw] flex justify-between items-center text-[9px] md:text-[11px] uppercase tracking-[0.3em] font-black text-gray-500 my-4 px-2 max-w-full"
+            className="w-full md:w-[75vw] flex justify-between items-center text-[9px] md:text-[11px] uppercase tracking-[0.3em] font-black text-gray-500 my-2 px-2 max-w-full"
             data-aos="fade-up"
             data-aos-duration="1000"
             data-aos-delay="1000"
           >
-            <span>Frontend Developer</span>
+            <span>Frontend Web Developer</span>
             <span>Yousaf</span>
           </div>
 
@@ -170,25 +170,23 @@ const Hero = () => {
             data-aos-duration="1000"
             data-aos-delay="1200"
           >
-            <h1 className="text-[clamp(70px,16vw,220px)] font-black tracking-[-0.05em] uppercase max-w-full text-center md:text-left">
+            {/* Reduced clamp values slightly */}
+            <h1 className="text-[clamp(60px,14vw,200px)] font-black tracking-[-0.05em] uppercase max-w-full text-center md:text-left">
               I AM
             </h1>
 
             <h1
-              className="text-[clamp(70px,16vw,220px)] font-black tracking-[-0.05em] uppercase text-transparent max-w-full text-center md:text-left"
-              style={{ WebkitTextStroke: "2px rgba(255,255,255,0.6)" }}
+              className="text-[clamp(60px,14vw,200px)] font-black tracking-[-0.05em] uppercase text-transparent max-w-full text-center md:text-left"
+              style={{ WebkitTextStroke: "3px rgba(255,255,255,0.6)" }}
             >
               Sheraz
             </h1>
           </div>
         </div>
       </main>
-      
+
       {/* FOOTER */}
-      <footer
-        className="relative z-50 flex justify-between items-end p-6 md:p-10 text-[9px] font-bold uppercase tracking-widest pointer-events-none"
-        
-      >
+      <footer className="relative z-50 flex justify-between items-end p-6 md:p-10 text-[9px] font-bold uppercase tracking-widest pointer-events-none">
         <span className="text-gray-500 text-[10px]">Based in Lahore, PK</span>
         <div className="flex flex-col items-end pointer-events-auto">
           <span className="text-gray-600 text-[10px] mb-2">
